@@ -20,6 +20,8 @@
             android:label="@string/library"/>
         <activity android:name=".Authors"
             android:label="@string/authors"/>
+        <activity android:name=".NowPlaying"
+            android:label="@string/now_playing"/>
     </application>
 
 </manifest>

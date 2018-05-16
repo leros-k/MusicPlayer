@@ -1,8 +1,10 @@
 package com.example.android.musicplayer;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.View;
 import android.widget.Adapter;
 import android.widget.ArrayAdapter;
 import android.widget.GridView;
@@ -45,5 +47,10 @@ public class Library extends AppCompatActivity{
         // {@link ListView} will display list items for each {@link Word} in the list.
         listView.setAdapter(adapter);
 
+    }
+
+    public void onClick(View view){
+        Intent intent = new Intent(Library.this, NowPlaying.class);
+        startActivity(intent);
     }
 }
