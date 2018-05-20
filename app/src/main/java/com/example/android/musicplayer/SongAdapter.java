@@ -38,7 +38,6 @@ public class SongAdapter extends ArrayAdapter<Song> {
         TextView authorTextView = (TextView) listItemView.findViewById(R.id.authors);
         authorTextView.setText(currentSong.getAuthor());
 
-
         return listItemView;
     }
 }

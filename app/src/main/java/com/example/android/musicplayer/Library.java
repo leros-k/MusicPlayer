@@ -56,15 +56,15 @@ public class Library extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 int itemPosition = position;
                 String itemValue = (String) listView.getItemAtPosition(position);
-
+            }
+            public void playButton(View v) {
+                Intent intent = new Intent(Library.this, NowPlaying.class);
+                startActivity(intent);
             }
         });
 
     }
 
-    public void onClick(View v) {
-    Intent intent = new Intent(Library.this, NowPlaying.class);
-    startActivity(intent);
-    }
+
 }
 
