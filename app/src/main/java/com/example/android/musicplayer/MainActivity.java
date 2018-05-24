@@ -18,9 +18,6 @@ public class MainActivity extends AppCompatActivity {
         // Find the View that shows the numbers category
         TextView library = (TextView) findViewById(R.id.library);
 
-        // Find the View that shows the phrases category
-        TextView authors = (TextView) findViewById(R.id.authors);
-
 
         // Set a click listener on that View
         library.setOnClickListener(new View.OnClickListener() {
@@ -29,16 +26,6 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent mainScreenIntent = new Intent(MainActivity.this, com.example.android.musicplayer.Library.class);
                 startActivity(mainScreenIntent);
-            }
-        });
-
-        // Set a click listener on that View
-        authors.setOnClickListener(new View.OnClickListener() {
-            // The code in this method will be executed when the phrases View is clicked on.
-            @Override
-            public void onClick(View view) {
-                Intent newRealisesIntent = new Intent(MainActivity.this, com.example.android.musicplayer.Authors.class);
-                startActivity(newRealisesIntent);
             }
         });
     }

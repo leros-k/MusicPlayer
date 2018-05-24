@@ -13,10 +13,4 @@
         android:background="@color/category"
         android:text="@string/library" />
 
-    <TextView
-        android:id="@+id/authors"
-        style="@style/CategoryStyle"
-        android:background="@color/category"
-        android:text="@string/authors" />
-
 </LinearLayout>

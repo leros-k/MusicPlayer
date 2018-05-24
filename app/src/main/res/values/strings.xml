@@ -3,6 +3,5 @@
     
     <!--Name of categories-->
     <string name="library">Library</string>
-    <string name="authors">Authors</string>
     <string name="now_playing">Now Playing</string>
 </resources>

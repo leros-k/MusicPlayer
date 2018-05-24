@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.v4.content.ContextCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,21 +24,30 @@ public class SongAdapter extends ArrayAdapter<Song> {
 
     @NonNull
     @Override
-    public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-        View listItemView = convertView;
-        if(listItemView == null) {
-            listItemView = LayoutInflater.from(getContext()).inflate(
+    public View getView(final int position, @Nullable View convertView, @NonNull ViewGroup parent) {
+
+        if(convertView == null) {
+            convertView = LayoutInflater.from(getContext()).inflate(
                     R.layout.list_item, parent, false);
         }
 
         Song currentSong = getItem(position);
 
-        TextView nameTextView = (TextView) listItemView.findViewById(R.id.song);
+        TextView nameTextView = (TextView)convertView.findViewById(R.id.song);
         nameTextView.setText(currentSong.getSong());
 
-        TextView authorTextView = (TextView) listItemView.findViewById(R.id.authors);
+        TextView authorTextView = (TextView)convertView.findViewById(R.id.authors);
         authorTextView.setText(currentSong.getAuthor());
 
-        return listItemView;
+        convertView.findViewById(R.id.play).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ((Library)getContext()).playButton(getItem(position).getAuthor(), getItem(position).getSong(), getItem(position).getDrawable());
+            }
+        });
+
+        convertView.findViewById(R.id.image).setBackgroundDrawable(ContextCompat.getDrawable(getContext(), getItem(position).getDrawable()));
+
+        return convertView;
     }
 }

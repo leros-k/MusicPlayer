@@ -11,6 +11,8 @@ public class Song {
     //Names of artists
     private String mAuthor;
 
+    private int drawableId;
+
 
     /**
      * Create a new Songs objects
@@ -18,9 +20,10 @@ public class Song {
      * @param song is the name of songs
      * @param author   is the name of artist
      */
-    public Song(String song, String author) {
+    public Song(String song, String author, int drawableId) {
         mSong = song;
         mAuthor = author;
+        this.drawableId = drawableId;
     }
 
     /**
@@ -35,5 +38,9 @@ public class Song {
      */
     public String getAuthor() {
         return mAuthor;
+    }
+
+    public int getDrawable(){
+        return drawableId;
     }
 }
